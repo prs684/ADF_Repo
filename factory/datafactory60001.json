@@ -1,0 +1,9 @@
+{
+	"name": "datafactory60001",
+	"location": "japanwest",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a24cf08e-37ef-4d6f-b729-218d27220587",
+		"tenantId": "76eadbb5-7996-45ce-9796-981ae5ff7652"
+	}
+}
