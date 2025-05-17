@@ -45,7 +45,16 @@
 				"     preCommands: [],",
 				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     skipDuplicateMapOutputs: true,",
+				"     mapColumn(",
+				"          SaleID,",
+				"          SaleDate,",
+				"          CustomerID,",
+				"          ProductID,",
+				"          Quantity,",
+				"          UnitPrice,",
+				"          TotalAmount",
+				"     )) ~> sink1"
 			]
 		}
 	}
