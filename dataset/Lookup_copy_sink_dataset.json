@@ -1,0 +1,23 @@
+{
+	"name": "Lookup_copy_sink_dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "mystorage60001_linked_ss",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "sink",
+				"fileSystem": "lookup-copy"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
