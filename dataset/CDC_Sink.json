@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText1",
+	"name": "CDC_Sink",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "mystorage60001_linked_ss",
@@ -10,6 +10,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@utcnow('yyyyMMddHHmmss')",
+					"type": "Expression"
+				},
 				"fileSystem": "cdc"
 			},
 			"columnDelimiter": ",",

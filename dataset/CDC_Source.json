@@ -1,5 +1,5 @@
 {
-	"name": "AzureSqlTable2",
+	"name": "CDC_Source",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureSql_mydb_Database",
