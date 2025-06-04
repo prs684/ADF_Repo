@@ -1,0 +1,35 @@
+{
+	"name": "ADF_Databricks_Run_Notebook",
+	"properties": {
+		"activities": [
+			{
+				"name": "Customer",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/aurelian1911@outlook.com/ADF/Incremental_load",
+					"baseParameters": {
+						"main_folder": "Customer",
+						"inner_folder": {
+							"value": "@formatDateTime(utcNow(), 'yyyyMMdd')",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks1",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": []
+	}
+}
