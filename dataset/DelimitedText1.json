@@ -1,5 +1,5 @@
 {
-	"name": "Metadata_source_folder",
+	"name": "DelimitedText1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "mystorage60001_linked_ss",
@@ -10,8 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "@concat('Customer/', formatDateTime(utcNow(), 'yyyyMMdd'))",
-				"fileSystem": "dbfs-container"
+				"fileSystem": "sink"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
@@ -20,15 +19,11 @@
 		},
 		"schema": [
 			{
-				"name": "CustomerID",
+				"name": "Id",
 				"type": "String"
 			},
 			{
-				"name": "CompanyName",
-				"type": "String"
-			},
-			{
-				"name": "SalesPerson",
+				"name": "Amount",
 				"type": "String"
 			}
 		]
