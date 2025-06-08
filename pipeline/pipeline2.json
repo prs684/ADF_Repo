@@ -20,7 +20,10 @@
 						"type": "DatasetReference"
 					},
 					"fieldList": [
-						"childItems"
+						{
+							"value": "[\"structure\"]",
+							"type": "Expression"
+						}
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
