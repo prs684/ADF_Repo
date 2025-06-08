@@ -20,10 +20,11 @@
 						"type": "DatasetReference"
 					},
 					"fieldList": [
-						"itemName"
+						"childItems"
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -50,7 +51,7 @@
 				"typeProperties": {
 					"variableName": "file_count",
 					"value": {
-						"value": "@length(activity('Get Metadata1').output)",
+						"value": "@length(activity('Get Metadata1').output.childItems)",
 						"type": "Expression"
 					}
 				}
