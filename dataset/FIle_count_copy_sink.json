@@ -1,5 +1,5 @@
 {
-	"name": "FIle_count_copy_source",
+	"name": "FIle_count_copy_sink",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "mystorage60001_linked_ss",
@@ -9,8 +9,7 @@
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation",
-				"fileSystem": "data-files"
+				"type": "AzureBlobFSLocation"
 			}
 		}
 	}
