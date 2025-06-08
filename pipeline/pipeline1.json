@@ -97,11 +97,23 @@
 										"type": "BinaryReadSettings"
 									}
 								},
+								"sink": {
+									"type": "BinarySink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									}
+								},
 								"enableStaging": false
 							},
 							"inputs": [
 								{
-									"referenceName": "FIle_count_copy_sink",
+									"referenceName": "FIle_count_copy_source",
+									"type": "DatasetReference"
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "Binary1",
 									"type": "DatasetReference"
 								}
 							]
