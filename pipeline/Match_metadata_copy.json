@@ -1,5 +1,5 @@
 {
-	"name": "pipeline2",
+	"name": "Match_metadata_copy",
 	"properties": {
 		"activities": [
 			{
@@ -67,6 +67,7 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
