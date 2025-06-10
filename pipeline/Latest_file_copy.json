@@ -104,7 +104,7 @@
 								},
 								"ifTrueActivities": [
 									{
-										"name": "Set variable1",
+										"name": "Set variable Latest file",
 										"type": "SetVariable",
 										"dependsOn": [],
 										"policy": {
@@ -119,35 +119,59 @@
 												"type": "Expression"
 											}
 										}
+									},
+									{
+										"name": "Set variable Last modified",
+										"type": "SetVariable",
+										"dependsOn": [
+											{
+												"activity": "Set variable Latest file",
+												"dependencyConditions": [
+													"Succeeded"
+												]
+											}
+										],
+										"policy": {
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"typeProperties": {
+											"variableName": "PreviousModifiedDate",
+											"value": {
+												"value": "@activity('Get Metadata2').output.lastModified",
+												"type": "Expression"
+											}
+										}
 									}
 								]
 							}
-						},
-						{
-							"name": "Set variable2",
-							"type": "SetVariable",
-							"dependsOn": [
-								{
-									"activity": "If Condition1",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
-							"policy": {
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"variableName": "PreviousModifiedDate",
-								"value": {
-									"value": "@activity('Get Metadata2').output.lastModified",
-									"type": "Expression"
-								}
-							}
 						}
 					]
+				}
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "ForEach1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "mm",
+					"value": {
+						"value": "@variables('LatestFileName')",
+						"type": "Expression"
+					}
 				}
 			}
 		],
@@ -158,6 +182,9 @@
 			"PreviousModifiedDate": {
 				"type": "String",
 				"defaultValue": "1990-01-01T00:00:00Z"
+			},
+			"mm": {
+				"type": "String"
 			}
 		},
 		"annotations": []
