@@ -1,0 +1,33 @@
+{
+	"name": "SQL_Mapping_conf",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "sourceFile",
+				"type": "nvarchar"
+			},
+			{
+				"name": "sinkTableSchema",
+				"type": "nvarchar"
+			},
+			{
+				"name": "sinkTableName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "jsonMapping",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "my_schema",
+			"table": "adf_mapping_config"
+		}
+	}
+}

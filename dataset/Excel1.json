@@ -1,0 +1,39 @@
+{
+	"name": "Excel1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "mystorage60001_linked_ss",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "New Microsoft Excel Worksheet.xlsx",
+				"folderPath": "metadata",
+				"fileSystem": "dynamic-mapping"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "sourceFile",
+				"type": "String"
+			},
+			{
+				"name": "sinkTableSchema",
+				"type": "String"
+			},
+			{
+				"name": "sinkTableName",
+				"type": "String"
+			},
+			{
+				"name": "jsonMapping",
+				"type": "String"
+			}
+		]
+	}
+}
