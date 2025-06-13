@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "Dynamic_column_mapping",
 	"properties": {
 		"activities": [
 			{
@@ -112,7 +112,11 @@
 								},
 								"sink": {
 									"type": "AzureSqlSink",
-									"writeBehavior": "insert",
+									"writeBehavior": "upsert",
+									"upsertSettings": {
+										"useTempDB": false,
+										"keys": []
+									},
 									"sqlWriterUseTableLock": false,
 									"disableMetricsCollection": false
 								},
