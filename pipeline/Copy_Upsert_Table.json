@@ -113,9 +113,9 @@
 					"variableName": "pipelineReturnValue",
 					"value": [
 						{
-							"key": "dfdf",
+							"key": "error",
 							"value": {
-								"type": "Object",
+								"type": "Expression",
 								"content": "@activity('Copy data1').error.message"
 							}
 						}
